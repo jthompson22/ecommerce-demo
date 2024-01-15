@@ -9,7 +9,7 @@ async function findAllEvents(){
 
 
 export async function getEvents(){
-  await new Promise((resolve) => setTimeout(resolve,10000))
+  // await new Promise((resolve) => setTimeout(resolve,10000))
 
   const dbClient = createDBClient()
 
