@@ -9,10 +9,9 @@ async function findAllEvents(){
 
 
 export async function getEvents(){
-  // await new Promise((resolve) => setTimeout(resolve,10000))
 
   const dbClient = createDBClient()
-
+  // fetch('https://google.com', { next: { revalidate: 10 } })
   let results =[]
   try {
       const database = dbClient.db('foodiefind');
@@ -27,6 +26,7 @@ export async function getEvents(){
 }
 
 export async function getEvent(slug: string){
+  await new Promise((resolve) => setTimeout(resolve,10000))
   const dbClient = createDBClient()
     // const data = await findSingleEvent(slug)
     let data =[]

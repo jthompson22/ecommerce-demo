@@ -26,3 +26,11 @@ export interface Event {
     slug:string
     numPeople:number
 }
+
+export interface Product {
+    name: string;
+    description: string
+    imageURL: string
+    slug:string
+    cost: string
+}
