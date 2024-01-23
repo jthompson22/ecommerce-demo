@@ -7,6 +7,5 @@ export async function GET(request :any) {
 // To handle a POST request to /api
 export async function PUT(request :any) {
   // Do whatever you want
-  console.log(request)
   return NextResponse.json({ message: "success" }, { status: 200 });
 }

@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="w-full sticky  top-0 bg-white ">
+    <div className="w-full sticky  top-0 bg-white z-50">
       <nav className="container relative flex flex-wrap items-center justify-between  mx-auto lg:justify-between xl:px-0 ">
         <Link href="/">  <Image src={logo} alt="logo" className=" w-28" priority/>
          </Link>

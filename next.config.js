@@ -8,7 +8,11 @@ const nextConfig = {
             hostname: 'plus.unsplash.com',
             port: '',
           },
-        ],
+            {
+              protocol: 'https',
+              hostname: 'auhdpekgze0aeok3.public.blob.vercel-storage.com',
+              port: '',
+            }]
       },
   webpack: (config) => {
     config.resolve.fallback = { fs: false };

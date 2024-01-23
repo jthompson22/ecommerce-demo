@@ -10,26 +10,25 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {Event} from "@/lib/types"
+import {Product} from "@/lib/types"
 
-export default function EventBlock(event: Event) {
+export default function ProductBlock(product: Product) {
     return (
         <Card>
-             <div className='relative w-full h-48'>
-                <Image src={event.imageURL}  alt={event.name} fill/>
+             <div className='relative w-full h-'>
+                <Image src={product.imageurl}  alt={product.name} height={452} width={681} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII="/>
                 </div>
             <CardHeader>
-                <CardTitle>{event.name}</CardTitle>
-                <CardDescription>{event.restaurant.foodType}</CardDescription>
-                <CardDescription>{event.numPeople} <span role="img" aria-label="people">👥</span></CardDescription>
+                <CardTitle>{product.name}</CardTitle>
+                <CardDescription>${product.cost} </CardDescription>
             </CardHeader>
             <CardContent>
-                <p>{event.description.substring(0, 250)}...</p>
+                <p>{product.description.substring(0, 250)}...</p>
             </CardContent>
             <CardFooter className="flex flex-row-reverse">
                 <Button asChild>
-                <Link href={`/events/${event.slug}`}>
-                     More
+                <Link href={`/products/${product.id}`}>
+                     View Details
                 </Link>
                 </Button>
             </CardFooter>
