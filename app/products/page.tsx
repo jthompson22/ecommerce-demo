@@ -20,7 +20,7 @@ export default async function ListEvent() {
     <main className="flex flex-col justify-center p-4 items-center">
       {/* <TaylorSwiftHero/> */}
 
-      <div className=" px-4  max-w-screen lg:px-6 mt-6">
+      <div className=" px-4 max-w-screen-lg  mt-6">
       <Suspense fallback={<Loading/>}>
         <Products />
       </Suspense>

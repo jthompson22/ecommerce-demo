@@ -19,7 +19,7 @@ export default  async function AddProduct() {
     async function  createProduct(formData : any) {
         "use server"
         await createProductServerAction(formData)
-        redirect('/')
+        redirect('/products')
     }
   return (
     <>
