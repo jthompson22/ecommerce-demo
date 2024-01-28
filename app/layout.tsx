@@ -8,8 +8,8 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Foodie find',
-  description: 'Meet with foodies in your city',
+  title: 'Concerts R Us',
+  description: 'Europes #1 concert apparel brand',
 }
 
 export default function RootLayout({
