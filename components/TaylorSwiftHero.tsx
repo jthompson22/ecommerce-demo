@@ -25,7 +25,7 @@ export default async function TaylorSwiftHero() {
         <div className="w-1/2 h-80 bg-[url('/taylor.jpg')] bg-cover bg-left bg-no-repeat ">
             <div className="p-6 mt-20">
             <p className=" w-1/2 p-2 text-2xl text-white font-extrabold text-shadow bg-teal-600 inline-block">
-                Calling all Taylor Swift Fans
+                Calling all Swifties
             </p>
             <div className="w-full">
                 <p className="w-1/2  p-2 mt-4 pb-4 text-l text-white  text-shadow bg-teal-600 inline-block">
