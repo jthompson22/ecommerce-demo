@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import AddToCartButton from '@/components/AddToCartButton'
 import { addToCartAction } from '@/lib/actions'
 
-export  default async function Product(id: any) {
+export  default async function ProductPage(id: any) {
   const product : Product= await getProduct(id.params.id)
  
   return (

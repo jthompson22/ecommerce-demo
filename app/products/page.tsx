@@ -5,7 +5,9 @@ import { getProducts } from "@/lib/products";
 import { Suspense } from "react";
 import Loading from "./loading";
 import TaylorSwiftHero from "@/components/TaylorSwiftHero";
+
 export const revalidate = 60;
+
 async function Products() {
   const products = await getProducts();
   return <ShoppingGrid products={products} />;
@@ -24,9 +26,7 @@ export default async function ListEvent() {
         <TaylorSwiftHero/>
         
         <div className=" px-4 max-w-screen-lg  mt-6">
-          <Suspense fallback={<Loading />}>
             <Products />
-          </Suspense>
         </div>
       </main>
     </>
