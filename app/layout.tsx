@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
-// import { SpeedInsights } from "@vercel/speed-insights/next"
-// import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react';
+import { DemoSettings } from '@/lib/demoSettings'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,13 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta property="og:image" content="https://concerts-r-abdej6hgd-dzlau.vercel.app/api/og" />
+        <meta property="og:image" content="https://concerts-r-abdej6hgd-dzlau.vercel.app/api/og" />
       </head>
       <body className={inter.className}>
-        <Header/>
+        <Header />
         {children}
-        {/* <Analytics /> */}
-        {/* <SpeedInsights /> */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

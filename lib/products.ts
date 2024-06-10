@@ -28,16 +28,16 @@ export const ProductTable = pgTable(
   },
 );
 
-export const getProducts= async () => {
+export const getProducts = async () => {
   const db = drizzle(sql);
   const selectResult = await db.select().from(ProductTable);
   return selectResult
 };
 
 
-export const getProduct = async(productID : number) =>{
-const db = drizzle(sql)
-const product = await db.select().from(ProductTable).where(eq(ProductTable.id, productID))
-return product[0]
+export const getProduct = async (productID: number) => {
+  const db = drizzle(sql)
+  const product = await db.select().from(ProductTable).where(eq(ProductTable.id, productID))
+  return product[0]
 
 }

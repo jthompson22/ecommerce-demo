@@ -31,7 +31,7 @@ export default function ProductBlock(product: Product) {
         <CardDescription>${product.cost} </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>{product.description.substring(0, 250)}...</p>
+        <p>{product.description.substring(0, 250)}</p>
       </CardContent>
       <CardFooter className="flex flex-row-reverse">
         <Button asChild>
