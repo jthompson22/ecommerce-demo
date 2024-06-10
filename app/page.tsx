@@ -35,7 +35,6 @@ export default async function Home() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center bg-stone-100">
-        <FlagValues values={{ free_shipping: true }} />
         {showShippingFlag ? (<div className="w-full h-10 bg-primary z-5 flex justify-center items-center">
           <span className=" text-white align-center">Free shipping on orders over $100!</span>
         </div>) : <></>}
