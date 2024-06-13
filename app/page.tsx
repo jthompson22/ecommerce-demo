@@ -11,9 +11,12 @@ import { getProducts } from '@/lib/products'
 import { get } from '@vercel/edge-config';
 import { unstable_flag as flag } from '@vercel/flags/next';
 import { FlagValues } from '@vercel/flags/react';
+import { draftMode } from 'next/headers'
+
 
 async function GetContentful() {
-  const heroContent = await getHeroContent()
+  const { isEnabled } = draftMode()
+  const heroContent = await getHeroContent(isEnabled)
   return <span className="text-shadow">{heroContent}</span>
 }
 
