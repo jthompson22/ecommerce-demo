@@ -3,6 +3,11 @@ const contentfulKey = process.env.CONTENTFUL_API
 const contentfulPreviewKey = process.env.CONTENTFUL_PREVIEW
 import { unstable_noStore } from 'next/cache'
 
+// async function GetContentful() {
+//   const { isEnabled } = draftMode()
+//   const heroContent = await getHeroContent(isEnabled)
+//   return <span className="text-shadow" > { heroContent } < /span>
+// }
 
 
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token

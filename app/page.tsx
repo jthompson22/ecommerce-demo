@@ -15,11 +15,6 @@ import { draftMode } from 'next/headers'
 import { SanityDocument } from "next-sanity"
 import { sanityFetch, HERO_QUERY } from "@/lib/sanity"
 
-async function GetContentful() {
-  const { isEnabled } = draftMode()
-  const heroContent = await getHeroContent(isEnabled)
-  return <span className="text-shadow">{heroContent}</span>
-}
 
 export default async function Home() {
   const hero = await sanityFetch<SanityDocument[]>({
@@ -27,18 +22,18 @@ export default async function Home() {
   })
 
   const products = await getProducts()
-  const showFreeShipping = flag({
-    key: 'free_shipping',
-    async decide() {
-      // Can also use third-party services to determine the flag value
-      // return getLaunchDarklyClient().variation(this.key, false);
-      const value = await get(this.key)
-      return await get(this.key) ?? false
-    }
-  })
+  // const showFreeShipping = flag({
+  //   key: 'free_shipping',
+  //   async decide() {
+  //     // Can also use third-party services to determine the flag value
+  //     // return getLaunchDarklyClient().variation(this.key, false);
+  //     const value = await get(this.key)
+  //     return await get(this.key) ?? false
+  //   }
+  // })
 
-  const showShippingFlag = await showFreeShipping()
-
+  // const showShippingFlag = await showFreeShipping()
+  const showShippingFlag = false
   return (
     <>
       <main className="flex min-h-screen flex-col items-center bg-stone-100">
