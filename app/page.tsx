@@ -24,7 +24,6 @@ export default async function Home() {
     async decide() {
       // Can also use third-party services to determine the flag value
       // return getLaunchDarklyClient().variation(this.key, false);
-
       const value = await get(this.key)
       return await get(this.key) ?? false
     }
