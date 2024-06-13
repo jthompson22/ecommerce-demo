@@ -12,7 +12,8 @@ import { get } from '@vercel/edge-config';
 import { unstable_flag as flag } from '@vercel/flags/next';
 import { FlagValues } from '@vercel/flags/react';
 import { draftMode } from 'next/headers'
-
+import { SanityDocument } from "next-sanity"
+import { sanityFetch, HERO_QUERY } from "@/lib/sanity"
 
 async function GetContentful() {
   const { isEnabled } = draftMode()
@@ -21,6 +22,10 @@ async function GetContentful() {
 }
 
 export default async function Home() {
+  const hero = await sanityFetch<SanityDocument[]>({
+    query: HERO_QUERY,
+  })
+
   const products = await getProducts()
   const showFreeShipping = flag({
     key: 'free_shipping',
@@ -52,7 +57,7 @@ export default async function Home() {
               </h1>
               <Suspense fallback={<Skeleton className=" w-[400px] h-[20px] my-5   bg-slate-100" />} >
                 <p className="py-5 text-xl leading-normal text-white lg:text-xl xl:text-2xl ">
-                  <GetContentful />
+                  {hero[0].value}
                 </p>
               </Suspense>
               <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row justify-start">
