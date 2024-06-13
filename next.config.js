@@ -13,6 +13,10 @@ const nextConfig = {
         hostname: "rdelggew6avu9bq0.public.blob.vercel-storage.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
     ],
   },
   webpack: (config) => {
