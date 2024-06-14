@@ -11,7 +11,7 @@ import { getProducts } from '@/lib/products'
 
 import { draftMode } from 'next/headers'
 import { SanityDocument } from "next-sanity"
-import { sanityFetch, HERO_QUERY } from "@/lib/sanity"
+import { sanityFetch, HERO_QUERY, PRODUCT_QUERY } from "@/lib/sanity"
 
 
 export default async function Home() {
@@ -19,7 +19,11 @@ export default async function Home() {
     query: HERO_QUERY,
   })
 
-  const products = await getProducts()
+
+  const productsQuery = await sanityFetch<SanityDocument[]>({
+    query: PRODUCT_QUERY,
+  })
+  const products = productsQuery.map((product: any) => { return { id: product._id, name: product.productName, imageurl: product.imageUrl, description: product.description, cost: product.price } })
 
   const showShippingFlag = false
   return (

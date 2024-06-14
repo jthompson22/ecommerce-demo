@@ -9,10 +9,14 @@ import { unstable_flag as flag } from '@vercel/flags/next';
 import { FlagValues } from '@vercel/flags/react';
 import { get } from '@vercel/edge-config';
 
-
+import { SanityDocument } from "next-sanity"
+import { sanityFetch, HERO_QUERY, PRODUCT_QUERY } from "@/lib/sanity"
 
 async function Products() {
-  const products = await getProducts();
+  const productsQuery = await sanityFetch<SanityDocument[]>({
+    query: PRODUCT_QUERY,
+  })
+  const products = productsQuery.map((product: any) => { return { id: product._id, name: product.productName, imageurl: product.imageUrl, description: product.description, cost: product.price } })
   return <ShoppingGrid products={products} />;
 }
 

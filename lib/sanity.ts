@@ -5,7 +5,13 @@ import { draftMode } from "next/headers";
 import { groq } from "next-sanity";
 export const token = process.env.SANITY_API_READ_TOKEN
 export const HERO_QUERY = groq`*[_type == "hero_content"]`;
-
+export const PRODUCT_QUERY = groq`*[_type == "product"]{
+    productName,
+    _id,
+    description,
+    price,
+     "imageUrl": image.asset->url
+   }`;
 // if (!token) {
 //     throw new Error('Missing SANITY_API_READ_TOKEN')
 // }
