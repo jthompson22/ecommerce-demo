@@ -13,6 +13,7 @@ import { draftMode } from 'next/headers'
 import { SanityDocument } from "next-sanity"
 import { sanityFetch, HERO_QUERY, PRODUCT_QUERY } from "@/lib/sanity"
 
+export const revalidate = 3600 // revalidate at most every hour
 
 export default async function Home() {
   const hero = await sanityFetch<SanityDocument[]>({
