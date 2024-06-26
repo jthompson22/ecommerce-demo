@@ -30,11 +30,11 @@ export default async function CanadaPage() {
                                 </p>
                             </Suspense>
                             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row justify-start">
-                                <Link
+                                {/* <Link
                                     href="/products"
                                     className="px-8 py-4 text-md font-medium text-center text-white bg-red-700 rounded-md " >
-                                    Shop now!
-                                </Link>
+                                    Shop now!!
+                                </Link> */}
                             </div>
                         </div>
                     </div>
