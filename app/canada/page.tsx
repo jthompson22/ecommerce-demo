@@ -33,7 +33,7 @@ export default async function CanadaPage() {
                                 <Link
                                     href="/products"
                                     className="px-8 py-4 text-md font-medium text-center text-white bg-red-700 rounded-md " >
-                                    Shop now!!
+                                    Lets go shopping eh?
                                 </Link>
                             </div>
                         </div>
