@@ -21,7 +21,7 @@ export default async function CanadaPage() {
     return (
         <>
             <main className="flex min-h-screen flex-col items-center bg-stone-100">
-                <div className="flex flex-wrap min-w-full bg-[url('/canada.jpg')] bg-cover bg-top bg-no-repeat h-96">
+                <div className="flex flex-wrap min-w-full bg-[url('/canada.jpg')] bg-cover bg-bottom bg-no-repeat h-96">
                     <div className="flex items-center min-w-full px-10" >
                         <div className="mb-8">
                             <Suspense fallback={<Skeleton className=" w-[400px] h-[20px] my-5   bg-slate-100" />} >
