@@ -12,15 +12,6 @@ export const PRODUCT_QUERY = groq`*[_type == "product"]{
     price,
      "imageUrl": image.asset->url
    }`;
-// if (!token) {
-//     throw new Error('Missing SANITY_API_READ_TOKEN')
-// }
-
-// experimental_taintUniqueValue(
-//     'Do not pass the sanity API read token to the client.',
-//     process,
-//     token,
-// )
 
 
 
