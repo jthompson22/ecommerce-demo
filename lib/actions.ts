@@ -28,7 +28,7 @@ export async function createProductServerAction(formData: FormData) {
 }
 
 export async function addToCartAction(prevState: any, formData: FormData) {
-  const data = await kv.lpush("cart", JSON.stringify({ "id": formData.get('id'), "name": formData.get('name'), "cost": formData.get('cost') }))
+  const data = await kv.lpush("cart", JSON.stringify({ "id": formData.get('id'), "name": formData.get('name'), "cost": formData.get('cost'), "imageURL": formData.get('imageURL') }))
 
   return {
     message: 'success',
