@@ -21,16 +21,16 @@ export async function POST(req: Request) {
         You will be mainly recommending products to our users based on the color of the product.`,
         messages: convertToCoreMessages(messages),
         tools: {
-            addResource: tool({
-                description: `add a resource to your knowledge base.
-                If the user provides a random piece of knowledge unprompted, use this tool without asking for confirmation.`,
-                parameters: z.object({
-                    content: z
-                        .string()
-                        .describe('the content or resource to add to the knowledge base'),
-                }),
-                execute: async ({ content }: { content: any }) => createResource({ content }),
-            }),
+            // addResource: tool({
+            //     description: `add a resource to your knowledge base.
+            //     If the user provides a random piece of knowledge unprompted, use this tool without asking for confirmation.`,
+            //     parameters: z.object({
+            //         content: z
+            //             .string()
+            //             .describe('the content or resource to add to the knowledge base'),
+            //     }),
+            //     execute: async ({ content }: { content: any }) => createResource({ content }),
+            // }),
             getInformation: tool({
                 description: `get information from your knowledge base to answer questions.`,
                 parameters: z.object({

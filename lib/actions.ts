@@ -54,11 +54,11 @@ export async function createProductServerAction(formData: FormData) {
     access: 'public',
   })
   const url = blob.url
-  const client = postgres(connectionString)
-  const db = drizzle(client);
-  const product = { name: name, cost: cost, description: description, imageurl: url }
-  await db.insert(ProductTable).values(product);
-  createResource({ content: `${name} ${description}` });
+  // const client = postgres(connectionString)
+  // const db = drizzle(client);
+  // const product = { name: name, cost: cost, description: description, imageurl: url }
+  // await db.insert(ProductTable).values(product);
+  // createResource({ content: `${name} ${description}` });
   revalidatePath('/products')
 }
 
