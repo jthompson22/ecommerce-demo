@@ -2,6 +2,8 @@
 import { useChat } from '@ai-sdk/react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import Markdown from 'react-markdown'
+
 
 export default function Chat() {
     const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -15,13 +17,13 @@ export default function Chat() {
                             {
                                 m.role === 'user' ?
                                     <div className="flex  flex-row-reverse gap-2">
-                                        <div className="rounded-lg bg-gray-100 px-3 py-2 text-sm dark:bg-gray-800">
-                                            {m.content}
+                                        <div className="rounded-lg bg-gray-100 px-3 py-2 text-sm dark:bg-gray-800 [&_a]:text-blue-700">
+                                            <Markdown>{m.content}</Markdown>
                                         </div>
                                     </div>
                                     :
-                                    <div className="flex w-max max-w-[75%] flex-col gap-2 rounded-lg bg-gray-900 px-3 py-2 text-sm text-gray-50 dark:bg-gray-50 dark:text-gray-900">
-                                        {m.content}
+                                    <div className="flex w-max max-w-[75%] flex-col gap-2 rounded-lg bg-gray-900 px-3 py-2 text-sm text-gray-50 dark:bg-gray-50 dark:text-gray-900 [&_a]:text-blue-700">
+                                        <Markdown>{m.content}</Markdown>
                                     </div>
                             }
                         </>
