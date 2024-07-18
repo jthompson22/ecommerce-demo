@@ -6,8 +6,7 @@ import Markdown from 'react-markdown'
 
 
 export default function Chat() {
-    const { messages, input, handleInputChange, handleSubmit } = useChat();
-    console.log(messages)
+    const { messages, input, handleInputChange, handleSubmit } = useChat({ maxToolRoundtrips: 2, });
     return (
         <div className="flex flex-col">
             <div className="flex-1 overflow-auto bg-white p-6 shadow dark:bg-gray-800">
@@ -23,7 +22,15 @@ export default function Chat() {
                                     </div>
                                     :
                                     <div className="flex w-max max-w-[75%] flex-col gap-2 rounded-lg bg-gray-900 px-3 py-2 text-sm text-gray-50 dark:bg-gray-50 dark:text-gray-900 [&_a]:text-blue-700">
-                                        <Markdown>{m.content}</Markdown>
+                                        <p>
+                                            {m.content.length > 0 ? (
+                                                <Markdown>{m.content}</Markdown>
+                                            ) : (
+                                                <span className="italic font-light">
+                                                    {'Taking a quick look for you...'}
+                                                </span>
+                                            )}
+                                        </p>
                                     </div>
                             }
                         </>
