@@ -33,12 +33,14 @@ export default async function CanadaPage() {
                                 <Link
                                     href="/products"
                                     className="px-8 py-4 text-md font-medium text-center text-white bg-red-700 rounded-md " >
-                                    Lets go shopping eh?
+                                    Lets go shopping eh
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* <h1 className="text-3xl font-bold mt-10">Top Prices for your Justin Bieber Concerts</h1>
+                <Image src={'/justin.webp'} alt="justin bieber" width={600} height={300} /> */}
             </main >
         </>
     )
