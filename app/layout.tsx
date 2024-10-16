@@ -24,7 +24,6 @@ export default function RootLayout({
         <meta property="og:image" content="https://concerts-r-abdej6hgd-dzlau.vercel.app/api/og" />
       </head>
       <body className={inter.className}>
-        <Header />
         {children}
         <Analytics />
         <SpeedInsights />

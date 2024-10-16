@@ -16,6 +16,8 @@ export default async function ProductPage(id: any) {
 
   return (
     <>
+      <Header />
+
       <main className="justify-center flex bg-slate-100 min-h-screen">
         <div className="max-w-screen-lg mt-5 flex flex-row ">
           <div className="w-1/2 h-full p-6 justify-center">
