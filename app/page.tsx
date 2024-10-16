@@ -29,6 +29,8 @@ export default async function Home() {
   const showShippingFlag = false
   return (
     <>
+      <Header />
+
       <main className="flex min-h-screen flex-col items-center bg-stone-100">
 
 
