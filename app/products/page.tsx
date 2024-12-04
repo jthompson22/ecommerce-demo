@@ -38,8 +38,8 @@ export default async function ListEvent() {
       <Header />
 
       <main className="flex min-h-56 flex-col  justify-between bg-stone-100 bg-[url('/concert.jpg')] bg-cover bg-top bg-no-repeat h-10">
-        {showShippingFlag ? (<div className="w-full h-10 bg-primary z-5 flex justify-center items-center">
-          <span className=" text-white align-center">Free shipping on orders over $100!</span>
+        {showShippingFlag ? (<div className="w-full bg-primary z-5 flex justify-center items-center pt-4">
+          <p className="text-white h-14">Free shipping on orders over $100!</p>
         </div>) : <></>}
         <h2 className="mb-4 text-4xl tracking-tight p-24 text-white dark:text-black">
           New Arrivals
