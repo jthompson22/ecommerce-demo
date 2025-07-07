@@ -8,6 +8,7 @@ import TaylorSwiftHero from "@/components/TaylorSwiftHero";
 import { unstable_flag as flag } from '@vercel/flags/next';
 import { FlagValues } from '@vercel/flags/react';
 import { get } from '@vercel/edge-config';
+import { freeShippingFlag } from '@/app/flags';
 
 import { SanityDocument } from "next-sanity"
 import { sanityFetch, HERO_QUERY, PRODUCT_QUERY } from "@/lib/sanity"
@@ -22,17 +23,8 @@ async function Products() {
 
 
 export default async function ListEvent() {
-  const showFreeShipping = flag({
-    key: 'free_shipping',
-    async decide() {
-      // Can also use third-party services to determine the flag value
-      // return getLaunchDarklyClient().variation(this.key, false);
-      const value = await get(this.key)
-      return await get(this.key) ?? false
-    }
-  })
-  const showShippingFlag = await showFreeShipping()
 
+  const showShippingFlag = await freeShippingFlag()
   return (
     <>
       <Header />
