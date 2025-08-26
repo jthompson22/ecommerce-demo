@@ -69,8 +69,8 @@ export default async function Home() {
           </div>
         </div>
         <div className="flex flex-col mt-10 w-full text-center">
-          <h1 className="md:text-2xl w-full font-semibold bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 text-transparent bg-clip-text">
-            Our latest products{" "}
+          <h1 className="md:text-4xl text-4xl w-full font-bold bg-gradient-to-r from-green-400 via-green-500 to-green-700 text-transparent bg-clip-text animate-pulse">
+            Our latest products
           </h1>
           <div className="w- mt-10 justify-center flex">
             <ProductCarousel products={products} />
