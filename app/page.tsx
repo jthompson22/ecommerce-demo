@@ -62,7 +62,7 @@ export default async function Home() {
                   href="/products"
                   className="px-8 py-4 text-md font-medium text-center text-white bg-primary rounded-md "
                 >
-                  Shop now!
+                  Shop now!!!
                 </Link>
               </div>
             </div>
